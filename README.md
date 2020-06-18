@@ -1,2 +1,2 @@
-# all-nighter
+# All nighter
  Log all commits of a user / org
