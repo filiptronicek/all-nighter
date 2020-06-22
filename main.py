@@ -45,4 +45,7 @@ def update():
                     used.append(event["id"])
         time.sleep(5)
         update()
-update()
+try:
+    update()
+except Exception:
+    update()

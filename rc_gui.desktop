@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Link
+Name=Raspberry Pi Configuration
+Icon=rpi
+URL=/usr/share/applications/rc_gui.desktop
