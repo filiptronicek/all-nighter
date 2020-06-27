@@ -30,21 +30,20 @@ def getEvents():
     return filteredEvents
 
 def update():
-    if hour in activeHours:
-        events = getEvents()
-        if len(events) > 0:
-            for event in events:
-                if event["id"] in used:
-                    pass
-                else:
-                    login = event["actor"]["login"]
-                    repo = event["repo"]["name"]
-                    time_at = event["created_at"]
-                    log(f"{time_at}: {login} > {repo}")
-                    print(login+" pushed to "+repo)
-                    used.append(event["id"])
-        time.sleep(5)
-        update()
+    events = getEvents()
+    if len(events) > 0:
+        for event in events:
+            if event["id"] in used:
+                pass
+            else:
+                login = event["actor"]["login"]
+                repo = event["repo"]["name"]
+                time_at = event["created_at"]
+                log(f"{time_at}: {login} > {repo}")
+                print(login+" pushed to "+repo)
+                used.append(event["id"])
+    time.sleep(5)
+    update()
 try:
     update()
 except Exception:
