@@ -40,11 +40,9 @@ def update():
                 repo = event["repo"]["name"]
                 time_at = event["created_at"]
                 log(f"{time_at}: {login} > {repo}")
-                print(login+" pushed to "+repo)
+                print(time_at + ": " + login+" pushed to "+repo)
                 used.append(event["id"])
     time.sleep(5)
     update()
-try:
-    update()
-except Exception:
-    update()
+
+update()
