@@ -8,7 +8,7 @@ from tokenKey import token
 now = datetime.now()
 hour = now.hour
 
-activeHoursFromTo = [10, 23] #From, to
+activeHoursFromTo = [0, 23] #From, to
 activeHours = []
 
 for i in range(activeHoursFromTo[0], activeHoursFromTo[1]):
